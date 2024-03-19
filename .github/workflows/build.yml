@@ -12,12 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install Windows 10 SDK
+      uses: GuillaumeFalourd/setup-windows10-sdk-action@v1
+      with:
+        sdk-version: '10.0.17763.0'
+
     - name: Set up MSBuild path
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Build eTokenSign3 Solution
-      run: msbuild eTokenSign3.sln /p:Configuration=Release /p:Platform="x86"  # Adjust platform as needed
-
+      run: msbuild eTokenSign3.sln /p:Configuration=Release /p:Platform="x86"
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3
       with:
