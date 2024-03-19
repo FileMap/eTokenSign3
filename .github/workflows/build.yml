@@ -20,6 +20,9 @@ jobs:
     - name: Set up MSBuild path
       uses: microsoft/setup-msbuild@v1.1
 
+    - name: Build eTokenSign3 Solution
+      run: msbuild eTokenSign3.sln /p:Configuration=Release /p:Platform="x86"
+
     - name: Determine Next Version and Tag
       id: versioning
       uses: mathieudutour/github-tag-action@v5.6
