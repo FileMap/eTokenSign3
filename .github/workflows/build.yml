@@ -16,7 +16,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Build eTokenSign3 Solution
-      run: msbuild eTokenSign3.sln /p:Configuration=Release /p:Platform="Any CPU"  # Adjust platform as needed
+      run: msbuild eTokenSign3.sln /p:Configuration=Release /p:Platform="x86"  # Adjust platform as needed
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3
